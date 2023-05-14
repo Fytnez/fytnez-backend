@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from fytnez_backend.cadastro.models.user import User
+from fytnez_backend.register.models.user import User
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):

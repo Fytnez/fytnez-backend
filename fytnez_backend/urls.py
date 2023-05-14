@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from fytnez_backend.cadastro.router import router
+from fytnez_backend.register.router import router
 
 urlpatterns = [
     path("api/cadastro/", include(router.urls)),

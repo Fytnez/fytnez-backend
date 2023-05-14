@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
-from fytnez_backend.cadastro.models.user import User
-from fytnez_backend.cadastro.serializers.user_serializer import UserSerializer
+from fytnez_backend.register.models.user import User
+from fytnez_backend.register.serializers.user_serializer import UserSerializer
 
 
 class UserView(viewsets.ModelViewSet):

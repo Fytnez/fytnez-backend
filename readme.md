@@ -26,7 +26,12 @@ O objetivo geral do projeto FYTNEZ é ser uma aplicação mobile multiplataforma
   $ python manage.py migrate
 ```
 
-5. Rodar o projeto
+5. Criar super usuário
+```
+  $ python manage.py createsuperuser
+```
+
+6. Rodar o projeto
 ```
   $ python manage.py runserver
 ```
@@ -38,7 +43,7 @@ O objetivo geral do projeto FYTNEZ é ser uma aplicação mobile multiplataforma
 ```
 - Criar migration com as novas alterações
 ```
-  $ python manage.py makemigrations
+  $ python manage.py makemigrations --name nome_da_migration
 ```
 - Atualizar banco de dados com as migrations
 ```
