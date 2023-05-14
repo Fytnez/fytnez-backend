@@ -15,8 +15,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+
+from fytnez_backend.cadastro.router import router
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("api/cadastro/", include(router.urls)),
+    path("admin/", admin.site.urls),
 ]
