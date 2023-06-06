@@ -33,7 +33,7 @@ O objetivo geral do projeto FYTNEZ é ser uma aplicação mobile multiplataforma
 
 6. Rodar o projeto
 ```
-  $ python manage.py runserver
+  $ python manage.py runserver 0.0.0.0:8000
 ```
 
 ## Comandos essenciais:
