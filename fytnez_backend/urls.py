@@ -20,6 +20,6 @@ from django.urls import path, include
 from fytnez_backend.register.router import router
 
 urlpatterns = [
-    path("api/cadastro/", include(router.urls)),
+    path("api/register/", include(router.urls)),
     path("admin/", admin.site.urls),
 ]
