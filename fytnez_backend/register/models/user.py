@@ -1,6 +1,7 @@
 from django.db import models
 
 from fytnez_backend.register.models.base_model import BaseModel
+from fytnez_backend.register.validators.user_validator import UserValidator
 
 
 class User(BaseModel):
