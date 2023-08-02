@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
-    "fytnez_backend.register",
+    "rest_framework.authtoken",
+    "fytnez_backend",
+    "fytnez_backend.register.models",
 ]
 
 MIDDLEWARE = [
@@ -125,3 +127,12 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 DEFAULT_RENDERER_CLASSES = "rest_framework.renderers.JSONRenderer"
+
+AUTH_USER_MODEL= "models.user.User"
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}

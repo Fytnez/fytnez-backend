@@ -18,8 +18,10 @@ from django.contrib import admin
 from django.urls import path, include
 
 from fytnez_backend.register.router import router
+from fytnez_backend.register.views.login_view import CustomObtainAuthToken
 
 urlpatterns = [
+    path('login/', CustomObtainAuthToken.as_view(), name='login'),
     path("api/cadastro/", include(router.urls)),
     path("admin/", admin.site.urls),
 ]
