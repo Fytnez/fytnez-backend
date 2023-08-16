@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class CadastroConfig(AppConfig):
+class RegisterConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
     name = "fytnez_backend.register"
