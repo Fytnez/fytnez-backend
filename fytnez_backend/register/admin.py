@@ -1,1 +1,1 @@
-import fytnez_backend.register.models_admin.user_admin
+import fytnez_backend.register.models.user
