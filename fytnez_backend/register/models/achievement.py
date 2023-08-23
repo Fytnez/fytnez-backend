@@ -10,6 +10,7 @@ class Achievement(BaseModel):
         WORKOUT = 'WORKOUT', 'Workout'
 
     name = models.CharField(max_length=255)
+    description = models.TextField(blank=True, null=True)
     points = models.IntegerField()
     is_secret = models.BooleanField()
     type = models.CharField(max_length=255, choices=Type.choices)
@@ -17,3 +18,7 @@ class Achievement(BaseModel):
         Coloque a constante do icon do Angular de acordo com o seguinte site:
         https://api.flutter.dev/flutter/material/Icons-class.html#constants
     ''')
+    hex_color = models.CharField(max_length=9, default='#FFFFC107')
+
+    def __str__(self):
+        return self.name
