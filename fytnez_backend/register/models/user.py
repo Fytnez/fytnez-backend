@@ -1,4 +1,5 @@
 import jwt
+from django.contrib.auth.hashers import make_password
 from datetime import timezone
 from django.db import models
 from fytnez_backend.register.models.base_model import BaseModel
@@ -19,7 +20,7 @@ class User(BaseModel):
     def generate_token(self):
         payload = {
             'user_id': self.pk,
-            'is_active': self.is_active,
+            'is_active': self.is_active or False,
             'exp': datetime.now(timezone.utc) + timedelta(minutes=30),
         }
         self.token = jwt.encode(payload, 'secret_key', algorithm='HS256')
@@ -31,3 +32,11 @@ class User(BaseModel):
             self.token_expiration is None
             or self.token_expiration > datetime.now(timezone.utc)
         )
+    
+    def save(self, *args, **kwargs):
+        if not self.pk:
+            self.set_password(self.password or '123456')
+        return super().save(*args, **kwargs)
+    
+    def set_password(self, raw_password):
+        self.password = make_password(raw_password)
