@@ -5,6 +5,7 @@ class BaseModel(models.Model):
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
     delete_at = models.DateTimeField(null=True,blank=True)
+    is_active = models.BooleanField(default=True)
 
     class Meta:
         abstract = True
