@@ -1,12 +1,12 @@
 import jwt
-from django.contrib.auth.hashers import make_password
+from django.contrib.auth.hashers import make_password, check_password
 from datetime import timezone
 from django.db import models
 from fytnez_backend.register.models.base_model import BaseModel
 from datetime import datetime, timedelta
 
 class User(BaseModel):
-    name = models.CharField(max_length=255)
+    username = models.CharField(max_length=255)
     email = models.CharField(max_length=255)
     total_points = models.CharField(max_length=255)
     password = models.CharField(max_length=255)
@@ -39,3 +39,6 @@ class User(BaseModel):
     
     def set_password(self, raw_password):
         self.password = make_password(raw_password)
+        
+    def check_password(self, raw_password):
+        return check_password(raw_password, self.password)

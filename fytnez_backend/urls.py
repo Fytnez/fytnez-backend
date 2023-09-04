@@ -18,8 +18,12 @@ from django.contrib import admin
 from django.urls import path, include
 
 from fytnez_backend.register.router import router
+from fytnez_backend.register.views.user_view import UserView
+
 
 urlpatterns = [
-    path("api/cadastro/", include(router.urls)),
+    path("api/register/", include(router.urls)),
+    path('api/register/login/', UserView.login),
+    path('api/register/minha_view_protegida/', UserView.minha_view_protegida),
     path("admin/", admin.site.urls),
 ]
