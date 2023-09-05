@@ -9,8 +9,9 @@ from fytnez_backend.register.validators.user_validator import UserValidator
 from datetime import datetime, timedelta
 
 class User(BaseModel):
+    name = models.CharField(max_length=255)
     username = models.CharField(max_length=255)
-    email = models.CharField(max_length=255)
+    email = models.EmailField(max_length=255, unique=True)
     total_points = models.CharField(max_length=255)
     password = models.CharField(max_length=255)
     height = models.IntegerField(validators=[UserValidator.validate_not_zero])
