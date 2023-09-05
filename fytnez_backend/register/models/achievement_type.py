@@ -8,3 +8,6 @@ class AchievementType(BaseModel):
         Coloque a constante do icon do Angular de acordo com o seguinte site:
         https://api.flutter.dev/flutter/material/Icons-class.html#constants
     ''')
+
+    def __str__(self):
+        return self.name
