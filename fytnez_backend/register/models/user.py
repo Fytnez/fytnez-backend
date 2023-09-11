@@ -1,6 +1,8 @@
+
 import jwt
 from django.contrib.auth.hashers import make_password, check_password
 from datetime import timezone
+
 from django.db import models
 from fytnez_backend.register.models.base_model import BaseModel
 from fytnez_backend.register.validators.user_validator import UserValidator
