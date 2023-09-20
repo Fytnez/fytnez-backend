@@ -1,3 +1,4 @@
+
 from django.db import models
 
 from fytnez_backend.register.models.base_model import BaseModel
