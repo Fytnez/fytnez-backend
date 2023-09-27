@@ -49,6 +49,10 @@ O objetivo geral do projeto FYTNEZ é ser uma aplicação mobile multiplataforma
 ```
   $ python manage.py migrate
 ```
+- Atualiza arquivo de dependências
+```
+  $ pip freeze > Requirements.txt
+```
 
 # Sobre a equipe
 ## Integrantes e Cargos:
