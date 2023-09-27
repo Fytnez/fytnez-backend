@@ -1,3 +1,4 @@
+
 from django.db import models
 
 from fytnez_backend.register.models.base_model import BaseModel
@@ -11,4 +12,3 @@ class User(BaseModel):
     height = models.IntegerField()
     weight = models.IntegerField()
     birthday = models.DateField()
-    fcm_token = models.CharField(blank=True, null=True, max_length=255)
