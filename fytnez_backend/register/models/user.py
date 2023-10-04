@@ -26,9 +26,7 @@ class User(BaseModel):
             'is_active': self.is_active or False,
             'exp': datetime.now(timezone.utc) + timedelta(minutes=30),
         }
-        self.token = jwt.encode(payload, 'secret_key', algorithm='HS256')
-        self.token_expiration = payload['exp']
-        self.save()
+        return jwt.encode(payload, 'secret_key', algorithm='HS256')
 
     def is_token_valid(self):
         return (

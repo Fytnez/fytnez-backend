@@ -24,6 +24,6 @@ from fytnez_backend.register.views.user_view import UserView
 urlpatterns = [
     path("api/register/", include(router.urls)),
     path('api/register/login/', UserView.login),
-    path('api/register/minha_view_protegida/', UserView.minha_view_protegida),
+    path('api/register/validate_token/', UserView.validate_token),
     path("admin/", admin.site.urls),
 ]
