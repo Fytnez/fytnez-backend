@@ -1,7 +1,6 @@
 from rest_framework import viewsets, status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from fytnez_backend.register.decorators.user_decorators import token_required
 from fytnez_backend.register.serializers.user_serializer import UserSerializer
 from fytnez_backend.register.models.user import User
 from fytnez_backend.register.utils.jwt_utils import generate_token, decode_jwt_token
